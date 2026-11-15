@@ -1,0 +1,22 @@
+name: Keep Render Awake & Process Retargeting Queue
+
+on:
+  schedule:
+    # Runs every 10 minutes so the free Render instance never spins down before or during your presentation
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-and-flush:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Health Endpoint
+        env:
+          RENDER_BACKEND_URL: ${{ secrets.RENDER_BACKEND_URL }}
+        run: |
+          if [ -z "$RENDER_BACKEND_URL" ]; then
+            echo "Set RENDER_BACKEND_URL in GitHub Repo Secrets (e.g. https://smart-fashion-ml-retargeting-api.onrender.com)"
+            exit 0
+          fi
+          curl -s "$RENDER_BACKEND_URL/api/health"
+          curl -s -X POST "$RENDER_BACKEND_URL/api/cron/process-queue"

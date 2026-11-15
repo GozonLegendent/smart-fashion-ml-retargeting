@@ -1,0 +1,198 @@
+{
+  "feature_cols": [
+    "time_on_product_sec",
+    "photos_clicked",
+    "size_clicks",
+    "wishlist_or_cart_clicks",
+    "scroll_depth_pct",
+    "bounce_rate",
+    "exit_rate",
+    "page_value",
+    "is_returning_visitor",
+    "is_weekend",
+    "engagement_intensity",
+    "bounce_to_exit_ratio"
+  ],
+  "scaler_mean": [
+    46.580225,
+    1.67175,
+    0.73825,
+    0.29875,
+    48.505425,
+    0.090798,
+    0.1159,
+    12.630725,
+    0.515,
+    0.26625,
+    2.385172,
+    0.692002
+  ],
+  "scaler_std": [
+    47.718831,
+    1.921068,
+    1.00759,
+    0.554074,
+    26.172134,
+    0.062203,
+    0.064807,
+    16.296106,
+    0.499775,
+    0.441997,
+    2.387348,
+    0.21629
+  ],
+  "logistic_weights": [
+    0.99673,
+    0.686832,
+    0.634386,
+    0.692088,
+    0.605992,
+    -0.515704,
+    -0.616081,
+    0.770231,
+    0.336243,
+    0.129731,
+    0.531609,
+    -0.158322
+  ],
+  "logistic_bias": -0.456795,
+  "kmeans_centers": [
+    [
+      -0.712699,
+      -0.67794,
+      -0.662746,
+      -0.536995,
+      -0.7152,
+      0.757117,
+      0.777365,
+      -0.659652,
+      0.970437,
+      0.016154,
+      -0.693825,
+      0.583171
+    ],
+    [
+      -0.722469,
+      -0.659629,
+      -0.654225,
+      -0.539188,
+      -0.788047,
+      0.781996,
+      0.804582,
+      -0.6758,
+      -1.030464,
+      -0.009371,
+      -0.650605,
+      0.59522
+    ],
+    [
+      0.902932,
+      0.837035,
+      0.825703,
+      0.676236,
+      0.956022,
+      -0.970688,
+      -0.997972,
+      0.841352,
+      0.36554,
+      -7.8e-05,
+      0.837263,
+      -0.742041
+    ]
+  ],
+  "cluster_name_map": {
+    "1": "Quick Bouncer",
+    "0": "Hesitant Window Shopper",
+    "2": "High-Intent Buyer"
+  },
+  "dataset_summary": {
+    "total_sessions": 5000,
+    "features_count": 12,
+    "positive_intent_rate_pct": 41.5,
+    "negative_intent_rate_pct": 58.5
+  },
+  "benchmark_models": [
+    {
+      "model": "Random Forest (Cost-Sensitive)",
+      "cv_accuracy": 91.4,
+      "cv_precision": 86.2,
+      "cv_recall": 89.5,
+      "cv_f1": 87.8,
+      "cv_roc_auc": 95.8
+    },
+    {
+      "model": "Gradient Boosting Classifier",
+      "cv_accuracy": 90.8,
+      "cv_precision": 85.7,
+      "cv_recall": 88.1,
+      "cv_f1": 86.9,
+      "cv_roc_auc": 95.2
+    },
+    {
+      "model": "Support Vector Machine (RBF Kernel)",
+      "cv_accuracy": 89.2,
+      "cv_precision": 82.9,
+      "cv_recall": 86.4,
+      "cv_f1": 84.6,
+      "cv_roc_auc": 93.7
+    },
+    {
+      "model": "Logistic Regression (L2 + Balanced)",
+      "cv_accuracy": 96.1,
+      "cv_precision": 91.5,
+      "cv_recall": 99.8,
+      "cv_f1": 95.4,
+      "cv_roc_auc": 92.4
+    },
+    {
+      "model": "Gaussian Naive Bayes",
+      "cv_accuracy": 84.6,
+      "cv_precision": 75.8,
+      "cv_recall": 81.2,
+      "cv_f1": 78.4,
+      "cv_roc_auc": 88.9
+    }
+  ],
+  "feature_importances": [
+    {
+      "feature": "wishlist_or_cart_clicks",
+      "importance": 24.8
+    },
+    {
+      "feature": "time_on_product_sec",
+      "importance": 19.4
+    },
+    {
+      "feature": "exit_rate",
+      "importance": 15.6
+    },
+    {
+      "feature": "page_value",
+      "importance": 12.3
+    },
+    {
+      "feature": "size_clicks",
+      "importance": 9.8
+    },
+    {
+      "feature": "engagement_intensity",
+      "importance": 7.4
+    },
+    {
+      "feature": "photos_clicked",
+      "importance": 5.2
+    },
+    {
+      "feature": "scroll_depth_pct",
+      "importance": 3.1
+    },
+    {
+      "feature": "is_returning_visitor",
+      "importance": 2.4
+    }
+  ],
+  "pca_explained_variance_pct": [
+    60.44,
+    8.37
+  ]
+}
